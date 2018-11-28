@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phone</title>
+    <style>
+        .phone {
+            background: transparent;
+            height: 600px;
+            width: 270px;
+            margin: 0px auto;
+            border: 10px solid #111111;
+            border-top-width: 20px;
+            border-radius: 5px;
+        }
+
+        .phone::before {
+            content: '';
+            background: #383838;
+            width: 50px;
+            height: 10px;
+            display: block;
+            border-radius: 100px;
+            position: relative;
+            top: -15px;
+            left: 45%;
+        }
+
+        .phone::after {
+            content: 'Samsung Galaxy S9';
+            font-family: sans-serif;
+            position: relative;
+            left: -265px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone"></div>
+</body>
+</html>

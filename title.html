@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Test</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            * {
+                user-select: none;
+                outline: none;
+            }
+
+            body {
+                margin: 0px;
+            }
+
+            .top {
+                width: 100%;
+                height: 200px;
+                background: black;
+            }
+
+            .content {
+                position: absolute;
+                top: 50px;
+                width: 70%;
+                left: 15%;
+                background: white;
+                box-shadow: 10px 10px 50px black;
+                border-radius: 3px;
+            }
+
+            hr {
+                border: 1px solid black;
+            }
+
+            .title {
+                margin-left: 50px;
+                font-family: sans-serif;
+            }
+
+            .text {
+                margin: 20px;
+                border: none;
+                border-bottom: 2px solid black;
+                transition: 0.5s;
+                width: 70%;
+            }
+
+            .text:focus {
+                border-bottom: 2px solid rgb(69, 69, 255);
+            }
+
+            .button {
+                background: rgb(41, 41, 255);
+                border: none;
+                border-radius: 2px;
+                padding: 10px 25px 10px 25px;
+                color: white;
+                font-size: 25px;
+                box-shadow: 0px 20px 50px gray;
+                transition: 0.5s;
+                margin-bottom: 70px;
+                float: right;
+                margin-right: 20px;
+                text-transform: uppercase;
+                letter-spacing: 0px;
+            }
+
+            .button:hover {
+                box-shadow: 0px 5px 50px gray;
+            }
+
+            .setting {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                font-size: 40px;
+                color: black;
+                cursor: pointer;
+            }
+        </style>
+        <script>
+            function settingswindow() {
+                window.open("settings.html");
+            }
+        </script>
+    </head>
+    <body>
+        <div class="top"></div>
+        <div class="content">
+            <h1 class="title">
+                Login
+            </h1>
+            <hr>
+            <!--<form action="code.77zsite.tk/login.php" method="post">-->
+                <input type="text" name="username" placeholder="USERNAME" class="text" />
+                <br>
+                <br>
+                <br>
+                <input type="password" name="password" class="text" placeholder="PASSWORD" />
+                <br><br>
+                <a href="lang.html"><input type="submit" class="button"></a> 
+            <!-- </form> -->
+            
+        </div>
+        <div onclick="settingswindow()" class="setting material-icons">
+            settings
+        </div>
+    </body>
+</html>

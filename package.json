@@ -1,0 +1,19 @@
+{
+  "name": "learn-to-code",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "build --dir"
+  },
+  "build": {
+    "productName": "Learn To Code"
+  },
+  "author": "Vince Richter",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "npm": "^6.4.1"
+  }
+}

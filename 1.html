@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Learn To Code</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            .nav {
+                position: fixed;
+                background: black;
+                height: 100%;
+                width: 300px;
+                top: 0px;
+                left: 0px;
+                bottom: 0px;
+                overflow: hidden;
+                transition: 0.5s;
+                display: none;
+            }
+
+            .arrow {
+                position: absolute;
+                right: 0;
+                color: white;
+                cursor: pointer;
+                transition: 0.5s;
+            }
+
+            .nav h1 {
+                color: white;
+                text-align: center;
+                font-size: 50px;
+                font-family: sans-serif;
+                text-transform: uppercase;
+            }
+        </style>
+        <script>
+            function closenav() {
+                var arrow = document.getElementById('arrow');
+                var nav = document.getElementById('nav');
+
+                if (nav.style.width == "0px") {
+                    
+                } else {
+                    
+                }
+            }
+
+            function codeedit() {
+                window.open('codeloading.html');
+            }
+        </script>
+        
+    </head>
+    <body>
+        <div class="nav">
+            <div class="arrow material-icons">
+                arrow_back
+            </div>
+            <h1>
+                Navigtion
+            </h1>
+        </div>
+        <button onclick="codeedit()">HEY</button>
+    </body>
+</html>

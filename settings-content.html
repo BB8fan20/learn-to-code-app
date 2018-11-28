@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Setting</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {
+                user-select: none;
+            }
+
+            body {
+                background: rgb(0, 89, 255);
+                transition: 0.5s;
+            }
+
+            .content-card {
+                width: 70%;
+                margin: 0px auto;
+                background: white;
+                padding: 10px;
+                border-radius: 2px;
+                transition: 0.5s;
+            }
+
+            .switch-btn {
+                width: 80px;
+                height: 40px;
+                background: #b4b4b4;
+                position: relative;
+                cursor: pointer;
+                border-radius: 20px;
+            }
+
+            .switch-btn::before {
+                content: '';
+                position: absolute;
+                height: 36px;
+                width: 36px;
+                background: #ffffff;
+                left: 2px;
+                top: 2px;
+                transition: all 150ms ease-out;
+                border-radius: 50%;
+            }
+
+            input[type=checkbox]:checked + .switch-btn::before {
+                left: 42px;
+            }
+
+            input[type=checkbox]:checked + .switch-btn {
+                background: rgb(100, 255, 100)
+            }
+
+            .switch {
+                opacity: 0;
+            }
+
+            h1 {
+                font-family: sans-serif;
+                text-transform: uppercase;
+                transition: 0.5s;
+            }
+
+            .option-wrapper span {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 15px;
+                float: right;
+                transition: 0.5s;
+            }
+
+            .option-wrapper {
+                height: 65px;
+            }
+        </style>
+        <script>
+            function darktheme() {
+                var checkbox = document.getElementById('checkbox');
+                var card = document.getElementById('card');
+                var title = document.getElementById('title');
+                var option = document.getElementById('option');
+
+                if (checkbox.checked == true) {
+                    document.getElementById('body').style.background = "#272727";
+                    card.style.background = "black";
+                    title.style.color = "white";
+                    option.style.color = "white";
+                } else {
+                    document.getElementById('body').style.background = "rgb(0, 89, 255)";
+                    card.style.background = "white";
+                    title.style.color = "black";
+                    option.style.color = "black";
+                }
+            }
+        </script>
+    </head>
+    <body id="body">
+        <div class="content-card" id="card">
+            <h1 id="title">
+                Themes
+            </h1>
+            <hr>
+            <div class="option-wrapper">
+                <span id="option">
+                    True Black Theme
+                </span>
+                <label class="switch">
+                    <input type="checkbox" id="checkbox" onclick="darktheme()" />
+                    <div class="switch-btn"></div>
+                </label>
+            </div>
+            
+        </div>
+    </body>
+</html>
