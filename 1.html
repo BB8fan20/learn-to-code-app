@@ -5,8 +5,23 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Learn To Code</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.41.0/theme/icecoder.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.41.0/codemirror.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.41.0/codemirror.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.41.0/mode/htmlembedded/htmlembedded.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.41.0/addon/hint/show-hint.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.41.0/addon/hint/html-hint.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.41.0/addon/hint/javascript-hint.js"></script>
+
         <style>
+            * {
+                user-select: none;
+            }
+
             .nav {
                 position: fixed;
                 background: black;
@@ -16,16 +31,19 @@
                 left: 0px;
                 bottom: 0px;
                 overflow: hidden;
-                transition: 0.5s;
-                display: none;
+                transition: 1s;
+                z-index: 100;
             }
 
             .arrow {
-                position: absolute;
-                right: 0;
                 color: white;
+                position: fixed;
+                left: 270px;
                 cursor: pointer;
-                transition: 0.5s;
+                transition: 1s;
+                z-index: 101;
+                font-size: 30px;
+                top: 0px;
             }
 
             .nav h1 {
@@ -35,16 +53,42 @@
                 font-family: sans-serif;
                 text-transform: uppercase;
             }
+
+            .title {
+                font-size: 40px;
+                font-family: sans-serif;
+                letter-spacing: 0px;
+            }
+
+            .content {
+                margin-left: 350px;
+            }
+
+            .editor-content {
+                width: 80%;
+                border: 1px solid black;
+            }
         </style>
         <script>
             function closenav() {
                 var arrow = document.getElementById('arrow');
                 var nav = document.getElementById('nav');
+                var content = document.getElementById('content');
 
                 if (nav.style.width == "0px") {
-                    
+                    nav.style.width = "300px";
+                    arrow.style.color = "white";
+                    arrow.style.left = "270px";
+                    arrow.style.transform = "rotate(0deg)";
+                    content.style.marginLeft = "350px";
+                    content.style.transition = "1s";
                 } else {
-                    
+                    nav.style.width = "0px";
+                    arrow.style.color = "black";
+                    arrow.style.left = "0px";
+                    arrow.style.transform = "rotate(180deg)";
+                    content.style.marginLeft = "0px";
+                    content.style.transition = "1.5s";
                 }
             }
 
@@ -55,14 +99,39 @@
         
     </head>
     <body>
-        <div class="nav">
-            <div class="arrow material-icons">
+        <div class="arrow material-icons" id="arrow" onclick="closenav()">
                 arrow_back
             </div>
+        <div class="nav" id="nav">
+            
             <h1>
                 Navigtion
             </h1>
         </div>
-        <button onclick="codeedit()">HEY</button>
+        <!-- <button onclick="codeedit()">HEY</button> -->
+        <div class="content" id="content">
+            <h1 class="title">
+                H1 Tag
+            </h1>
+            <br>
+            <div class="editor-content">
+                <div id="codeeditor"></div>
+            </div>
+            
+            <script>
+            
+                var editorhtml = CodeMirror(document.getElementById("codeeditor"), {
+                    value: "<!-- This is a comment. This will not be used in the code -->\n",
+                    mode: "html",
+                    tabSize: 4,
+                    lineWrapping: true,
+                    lineNumbers: true,
+                    firstLineNumber: 1,
+                    extraKeys: { "Ctrl-Space": "autocomplete" }
+                });
+
+
+            </script>
+        </div>
     </body>
 </html>
